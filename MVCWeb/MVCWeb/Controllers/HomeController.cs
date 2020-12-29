@@ -10,7 +10,11 @@ namespace MVCWeb.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (Models.CartsEntities db = new Models.CartsEntities())
+            {
+                var result = (from s in db.Products select s).ToList();
+                return View(result);
+            }
         }
 
         public ActionResult About()

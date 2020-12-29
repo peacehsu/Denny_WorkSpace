@@ -10,7 +10,7 @@
     @Html.Label("info",(string)ViewBag.ResultMessage,new { @class = "text-info"})
 }
 <table class="table">
-    <thead><tr><td>編號</td><td>名稱</td><td>描述</td><td>售價</td><td>庫存</td></tr></thead>
+    <thead><tr><td>操作</td><td>商品圖</td><td>編號</td><td>名稱</td><td>描述</td><td>售價</td><td>庫存</td></tr></thead>
     <tbody>
         @foreach (var pd in this.Model) /* 使用foreach將所有商品列出 */
         {
@@ -27,7 +27,7 @@
                         <input type="submit" value="刪除" class="btn btn-default" />
                     }
                 </td>
-
+                <td><img src="@pd.DefaultImageURL" width="50" height="50"></td>
                 <td>@pd.Id</td>
                 <td>@pd.Name</td>
                 <td>@pd.Description</td>

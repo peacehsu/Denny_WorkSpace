@@ -97,6 +97,7 @@ namespace MVCWeb.Controllers
                     result.Quantity = postback.Quantity;
                     result.CategoryId = postback.CategoryId;
                     result.Description = postback.Description;
+                    result.DefaultImageURL = postback.DefaultImageURL;
 
                     //儲存所有變更
                     db.SaveChanges();
