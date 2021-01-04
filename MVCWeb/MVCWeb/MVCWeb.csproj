@@ -185,7 +185,9 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManageOrderController.cs" />
     <Compile Include="Controllers\ManageUserController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -218,7 +220,6 @@
     <Compile Include="Models\Carts\Cart.cs" />
     <Compile Include="Models\Carts\CartItem.cs" />
     <Compile Include="Models\Carts\Operation.cs" />
-    <Compile Include="Models\Carts\OrderController.cs" />
     <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>User.tt</DependentUpon>
     </Compile>
@@ -227,6 +228,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\OrderModel\Ship.cs" />
+    <Compile Include="Models\PatialClass.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Route\TempProducts.cs" />
     <Compile Include="Models\User.Context.cs">
@@ -343,10 +346,14 @@
     <Content Include="Views\ManageUser\Index.cshtml" />
     <Content Include="Views\ManageUser\Edit.cshtml" />
     <Content Include="Views\Shared\_CartPartial.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\ManageOrder\Index.cshtml" />
+    <Content Include="Views\ManageOrder\Details.cshtml" />
+    <Content Include="Views\Order\MyOrder.cshtml" />
+    <Content Include="Views\Order\MyOrderDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cart\" />
-    <Folder Include="Views\Order\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
