@@ -40,7 +40,7 @@ namespace MVCWeb.Controllers
             }
         }
 
-        public ActionResult SerachByUserName(string UserName)
+        public ActionResult SearchByUserName(string UserName)
         {
             //儲存查詢出來的UserId
             string searchUserId = null;
@@ -64,8 +64,18 @@ namespace MVCWeb.Controllers
                 }
             }
             else
-            {   //回傳 空結果 至Index()的View
-                return View("Index", new List<Models.Order>());
+            {
+                using (Models.CartsEntities db = new Models.CartsEntities())
+                {
+                    var result = (from s in db.Orders
+                                  select s).ToList();
+
+                    //回傳 結果 至Index()的View
+                    return View("Index", result);
+                }
+
+                //回傳 空結果 至Index()的View
+                //return View("Index", new List<Models.Order>());
             }
 
         }

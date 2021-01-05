@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/03/2021 21:59:00
+-- Date Created: 01/05/2021 10:50:30
 -- Generated from EDMX file: D:\DennyWorkSpace\MVCWeb\MVCWeb\Models\Carts.edmx
 -- --------------------------------------------------
 
@@ -17,6 +17,9 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_OrderOrderDetail]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OrderDetails] DROP CONSTRAINT [FK_OrderOrderDetail];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -24,6 +27,12 @@ GO
 
 IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Products];
+GO
+IF OBJECT_ID(N'[dbo].[Orders]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Orders];
+GO
+IF OBJECT_ID(N'[dbo].[OrderDetails]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OrderDetails];
 GO
 
 -- --------------------------------------------------
@@ -65,6 +74,16 @@ CREATE TABLE [dbo].[OrderDetails] (
 );
 GO
 
+-- Creating table 'ProductCommets'
+CREATE TABLE [dbo].[ProductCommets] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [UserId] nvarchar(max)  NOT NULL,
+    [Content] nvarchar(max)  NOT NULL,
+    [CreateDate] datetime  NOT NULL,
+    [ProductId] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -84,6 +103,12 @@ GO
 -- Creating primary key on [Id] in table 'OrderDetails'
 ALTER TABLE [dbo].[OrderDetails]
 ADD CONSTRAINT [PK_OrderDetails]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'ProductCommets'
+ALTER TABLE [dbo].[ProductCommets]
+ADD CONSTRAINT [PK_ProductCommets]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

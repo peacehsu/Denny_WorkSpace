@@ -231,6 +231,7 @@
     <Compile Include="Models\OrderModel\Ship.cs" />
     <Compile Include="Models\PatialClass.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCommet.cs" />
     <Compile Include="Models\Route\TempProducts.cs" />
     <Compile Include="Models\User.Context.cs">
       <AutoGen>True</AutoGen>
@@ -351,6 +352,7 @@
     <Content Include="Views\ManageOrder\Details.cshtml" />
     <Content Include="Views\Order\MyOrder.cshtml" />
     <Content Include="Views\Order\MyOrderDetail.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Cart\" />
