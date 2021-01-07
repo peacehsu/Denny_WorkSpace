@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>商品列表</h2>
+    <table class="table">
+    <thead><tr><td>編號</td><td>名稱</td><td>售價</td></thead>
+    <tbody>
+        @foreach(var item in this.Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+        </tr>
+        }
+    </tbody>
+    </table>
